@@ -7,7 +7,7 @@ RUN cd /go/src/github.com/microservices-demo/payment/ && gvt restore
 
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o /app github.com/microservices-demo/payment/cmd/paymentsvc
 
-FROM alpine:3.4
+FROM alpine:3.20.3
 
 WORKDIR /
 COPY --from=0 /app /app
